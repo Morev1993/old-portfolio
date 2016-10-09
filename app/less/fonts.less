@@ -1,0 +1,162 @@
+//PFDinDisplayPro-Light
+@font-face {
+    font-family: 'PFDinDisplayPro-Light';
+    src: url('../fonts/PFDinDisplayPro/PFDinDisplayPro-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//PFDinDisplayPro-Bold
+@font-face {
+    font-family: 'PFDinDisplayPro-Bold';
+    src: url('../fonts/PFDinDisplayPro/PFDinDisplayPro-Bold.ttf') format('truetype'),
+    url('../fonts/PTSansBold/PTS75F_W.svg#PTSans-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//PFDinDisplayPro-Black
+@font-face {
+    font-family: 'PFDinDisplayPro-Black';
+    src: url('../fonts/PTSansItalic/PTS56F_W.eot'),
+    url('../fonts/PTSansItalic/PTS56F_W.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/PTSansItalic/PTS56F_W.woff') format('woff'),
+    url('../fonts/PTSansItalic/PTS56F_W.ttf') format('truetype'),
+    url('../fonts/PTSansItalic/PTS56F_W.svg#PTSans-Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//CenturyGothic
+@font-face {
+    font-family: 'CenturyGothic';
+    src: url('../fonts/CenturyGothicRegular/CenturyGothicRegular.eot'),
+    url('../fonts/CenturyGothicRegular/CenturyGothicRegular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CenturyGothicRegular/CenturyGothic.woff') format('woff'),
+    url('../fonts/CenturyGothicRegular/CenturyGothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+.ffbasetext {
+    font-family: "PFDinDisplayPro-Light", Arial, sans-serif;
+}
+
+.ffheadings {
+    font-family: "PFDinDisplayPro-Bold", Arial, sans-serif;
+}
+
+.ffitalic {
+    font-family: "PTSansItalic", Arial, sans-serif;
+}
+
+
+
+@baseFontSize: 16px;
+
+@s-XXL:	    3.6rem;		/*36*/
+@s-XL:		3rem;		/*30*/
+@s-L:		2.4rem;		/*24*/
+@s-M:		1.8rem;		/*18*/
+@s-N:		1.4rem;		/*14*/
+@s-S:		1.2rem;		/*12*/
+@s-XS:		1.1rem;		/*11*/
+@s-XXS:		1.0rem;		/*10*/
+
+@line-height-base: 1.428571429;
+
+@line-height-link: 19px;
+
+.f-XXL {
+    font-size: @s-XXL;
+    line-height: @s-XXL*@line-height-base;
+}
+
+.f-XL {
+    font-size: @s-XL;
+    line-height: @s-XL * @line-height-base;
+}
+
+.f-L {
+    font-size: @s-L;
+    line-height: @s-L * @line-height-base;
+}
+
+.f-M {
+    font-size: @s-M;
+    line-height: @s-M * @line-height-base;
+}
+
+.f-N {
+    font-size: @s-N;
+    line-height: @s-N*@line-height-base;
+}
+
+.f-S {
+    font-size: @s-S;
+    line-height: @s-S*@line-height-base;
+}
+
+.f-XS {
+    font-size: @s-XS;
+    line-height: @s-XS*@line-height-base;
+}
+
+.f-XXS {
+    font-size: @s-XXS;
+    line-height: @s-XXS*@line-height-base;
+}
+
+.f-base {
+    font-size: @baseFontSize;
+    line-height: @line-height-base;
+}
+
+.f-reset {
+    margin: 0;
+    padding: 0;
+}
+
+/* text transformations for individual cases */
+.f-i {
+    font-style: italic
+}
+
+.f-b {
+    font-weight: bold
+}
+
+.f-UC {
+    text-transform: uppercase
+}
+
+.f-lc {
+    text-transform: lowercase
+}
+
+.f-Cp {
+    text-transform: capitalize
+}
+
+.t-C {
+    text-align: center
+}
+
+.t-R {
+    text-align: right
+}
+
+.t-L {
+    text-align: left
+}
+
+.t-J {
+    text-align: justify;
+    word-spacing: -0.08em
+}
+
+.nobr {
+    white-space: nowrap
+}
