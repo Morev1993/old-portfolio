@@ -1,14 +1,58 @@
-@import "../bower_components/bootstrap/less/variables.less";
-@import "../bower_components/bootstrap/less/mixins.less";
-@import "../bower_components/bootstrap/less/normalize.less";
-@import "../bower_components/bootstrap/less/print.less";
-@import "../bower_components/bootstrap/less/type.less";
-@import "../bower_components/bootstrap/less/grid.less";
-@import "../bower_components/bootstrap/less/buttons.less";
+/* bootstrap */
+@import "../bower_components/bootstrap/less/bootstrap.less";
+
+/* fullpage */
+@import "../bower_components/fullpage.js/jquery.fullPage.css";
+
 
 @import "fonts.less";
 @import "colors.less";
 @import "mixins.less";
+
+body {
+	.ffbasetext;
+	.f-base;
+	overflow-x: hidden;
+}
+
+a, button {
+	&:hover, &:focus {
+		text-decoration: none;
+		outline: none !important;
+	}
+}
+
+.top-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background: transparent;
+	ul {
+		float: right;
+		padding-top: 12px;
+		a {
+			color: #fff;
+		}
+		li {
+			float: left;
+			margin-right: 30px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.main-content {
+	.section {
+		&.main {
+			color: #fff;
+			position: relative;
+		}
+	}
+}
 
 
 

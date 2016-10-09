@@ -1,12 +1,7 @@
-$(document).ready(function() {
-
-	//SVG Fallback
-	if(!Modernizr.svg) {
-		$("img[src*='svg']").attr("src", function() {
-			return $(this).attr("src").replace(".svg", ".png");
-		});
-	};
-
-
-	
+$(document).ready(() => {
+    $('#fullpage').fullpage({
+	    sectionsColor: ['#242e45', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+	    navigation: true,
+	    scrollingSpeed: 1000
+	});
 });

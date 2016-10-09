@@ -3,4 +3,24 @@ html(lang="en")
   include ./inc/head.pug
   body
     include ./inc/header.pug
+
+    div#fullpage.main-content
+      .section.main.active 
+        .container
+          h1 Портфолио <br>фронтенд разработчика
+      .section
+          .container
+            h2 Loovir
+            p Интернет-каталог женской косметологии
+            div
+              a(href="#").btn.btn-primary Подробнее
+      .section
+          .container
+            h2 Лесная заимка
+            p Ресторан русской кухни
+            div
+              a(href="#").btn.btn-primary Подробнее
+
+
+
     include ./inc/footer.pug
