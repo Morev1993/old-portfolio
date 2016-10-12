@@ -1,7 +1,22 @@
 $(document).ready(() => {
-    $('#fullpage').fullpage({
-	    sectionsColor: ['#242e45', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
-	    navigation: true,
-	    scrollingSpeed: 1000
+	$('.more').click(() => {
+		$('.bg').removeClass('showed');
+		$('header').removeClass('slide-right');
+		$('.main-page').addClass('slide-left');
+		$('.main-page').removeClass('in');
+		$('.main-page .content').addClass('fade-hide');
 	});
+
+	$('.bg').addClass('showed');
+	$('header').addClass('slide-right');
+
+	$('.typist')
+		.typist({ speed: 15 })
+		.typistPause(400)
+		.typistAdd('Услуги от фронтенд-разработчика')
+		.on('end_type.typist', function() {
+        	$('.more').addClass('animated jello showed');
+        	$('.main-page').addClass('in');
+    	})
+
 });

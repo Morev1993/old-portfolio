@@ -2,24 +2,16 @@ doctype html
 html(lang="en")
   include ./inc/head.pug
   body
-    include ./inc/header.pug
+    include ./inc/aside.pug
 
-    div#fullpage.main-content
-      .section.main.active 
-        .container
-          h1 Портфолио <br>фронтенд разработчика
-      .section
-          .container
-            h2 Loovir
-            p Интернет-каталог женской косметологии
-            div
-              a(href="#").btn.btn-primary Подробнее
-      .section
-          .container
-            h2 Лесная заимка
-            p Ресторан русской кухни
-            div
-              a(href="#").btn.btn-primary Подробнее
+    main.main-page
+      .wrapper
+        .bg
+          .content
+            h1.typist
+            div.more
+              +btn("btn btn-danger", "Подробнее")
+
 
 
 

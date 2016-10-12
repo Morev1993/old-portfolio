@@ -15,6 +15,8 @@
     "jquery": "^3.1.1",
     "modernizr": "^3.3.1",
     "bootstrap": "^3.3.7",
-    "fullpage.js": "^2.8.6"
+    "fullpage.js": "^2.8.6",
+    "jquery.typist": "^0.0.7",
+    "animate.css": "^3.5.2"
   }
 }

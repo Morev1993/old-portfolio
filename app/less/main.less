@@ -3,6 +3,7 @@
 
 /* fullpage */
 @import "../bower_components/fullpage.js/jquery.fullPage.css";
+@import "../bower_components/animate.css/animate.min.css";
 
 
 @import "fonts.less";
@@ -13,6 +14,15 @@ body {
 	.ffbasetext;
 	.f-base;
 	overflow-x: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	.f-XXL;
+	.ffheadings;
+	font-size: 44px;
+	margin-bottom: 20px;
 }
 
 a, button {
@@ -22,35 +32,100 @@ a, button {
 	}
 }
 
-.top-header {
+header {
 	position: fixed;
+	width: 72px;
+	border-right: 1px solid rgba(0, 0, 0, .1);
 	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 1000;
-	background: transparent;
-	ul {
-		float: right;
-		padding-top: 12px;
-		a {
-			color: #fff;
-		}
-		li {
-			float: left;
-			margin-right: 30px;
-			&:last-child {
-				margin-right: 0;
-			}
+	bottom: 0;
+	height: 100%;
+	padding-top: 20px;
+	left: -72px;
+	transition: left 0.3s ease;
+	&.slide-right {
+		left: 0;
+	}
+	.burger-menu {
+		width: 35px;
+		cursor: pointer;
+	}
+	.social {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding-bottom: 20px;
+		img {
+			margin: auto;
+			margin-bottom: 5px;
+			cursor: pointer;
 		}
 	}
 }
 
-.main-content {
-	.section {
-		&.main {
-			color: #fff;
-			position: relative;
+.main-page {
+	margin-left: 72px;
+    height: 100vh;
+   	padding: 0px;
+   	min-height: 500px;
+   	transition: all .3s ease;
+   	&.slide-left {
+   		margin-left: 0;
+   	}
+   	&.in {
+   		padding: 30px;
+   	}
+   	.wrapper {
+   		position: relative;
+   		height: 100%;
+   	}
+   	.bg {
+		background: gray;
+		height: 100%;
+		background: url("../img/bg.jpg") no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+		color: #fff;
+		height: 100%;
+	    position: absolute;
+	    width: 100%;
+	    display: flex;
+		flex-direction: row;
+		align-items: center;
+	    clip: rect(40vh, 100vw, 40vh, 0px);
+		transition: all 0.7s ease .4s;
+		&.showed {
+			clip: rect(0px, 100vw, 100vh, 0px);
 		}
+		.content {
+			margin-left: 100px;
+			transition: all 0.7s ease;
+			opacity: 1;
+			&.fade-hide {
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+   	}
+}
+
+.more {
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.7s ease;
+	position: relative;
+	top: 20px;
+	left: 0;
+	.btn {
+		font-size: 15px;
+		.f-UC;
+		letter-spacing: 2px
+	}
+	&.showed {
+		visibility: visible;
+		opacity: 1;
+		top: 0;
+		left: 0;
 	}
 }
 
