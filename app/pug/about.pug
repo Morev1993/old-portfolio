@@ -1,0 +1,38 @@
+include ./inc/head.pug
+body
+  include ./inc/aside.pug
+
+  main
+    .typepage
+      .container
+        h1.t-C Обо мне
+        p
+          a(href="/") На главную
+        .row
+          .col-sm-7
+            p Привет, меня зовут Игорь Морев. Я&nbsp;<nobr>фронтенд-разработчик</nobr> из&nbsp;России. Не&nbsp;так давно я&nbsp;работал в&nbsp;<nobr>веб-студии</nobr> с&nbsp;очень быстрым ритмом, занимался аддаптивной вёрсткой <nobr>веб-сайтов</nobr>. На&nbsp;сегодняшний день я&nbsp;работаю в&nbsp;финансовой компании и&nbsp;отвечаю за&nbsp;всю клиентскую часть <nobr>веб-приложений</nobr> совместно с&nbsp;профессиональными дизайнерами и&nbsp;разработчиками.
+          .col-sm-5.six
+            div.t-C.m-b-2
+              img(src="/img/six.png")
+            p В&nbsp;портфолио я&nbsp;включил более 6 успешных проектов
+        h2.t-C Мои услуги
+        p Могу предложить вам следующие услуги:
+        ul.m-b-3
+          li Аддаптивная вёрстка
+          li Разработка фронтенд-логики
+          li Создание rest-api на node.js (express), php
+        h2.t-C Технологии
+        p Cтек технологий, которыми я владею:
+        ul.m-b-5
+          li HTML5 / PUG (JADE), CSS3, SASS / SCSS/ LESS
+          li Vanilla js, jQuery, Angular.js, Vue.js
+          li Node.js (express), php, mySql, mongoDb, wordpress rest-api
+
+        .row
+          .col-sm-6.col-sm-offset-3.t-C
+            p В&nbsp;короткий срок разработаю интерфейс любой сложности для вашего сайта или <nobr>веб-приложения</nobr>
+            div
+              a(href="/projects.html" class="btn btn-danger") Проекты
+
+
+  include ./inc/footer.pug

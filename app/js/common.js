@@ -3,8 +3,9 @@ $(document).ready(() => {
 		$('.bg').removeClass('showed');
 		$('header').removeClass('slide-right');
 		$('.main-page').addClass('slide-left');
-		$('.main-page').removeClass('in');
 		$('.main-page .content').addClass('fade-hide');
+		$('.main-page').removeClass('in');
+		$('.main-page').addClass('out');
 	});
 
 	$('.bg').addClass('showed');

@@ -1,0 +1,27 @@
+include ./inc/head.pug
+body
+  include ./inc/aside.pug
+
+  main
+    .typepage
+      .container
+        h1.t-C Реализованные проекты
+        p
+          a(href="/about.html") Обо мне
+        .row.pr-list
+          each val in [1, 2, 3, 4, 5, 6]
+            .col-sm-4.pr-item
+              .inner
+                div.t-C.img-wr
+                  a(href="#")
+                    img(src="/img/pr-preview.png")
+                .content
+                  h4 
+                    a(href="#") Лесная заимка
+                  p
+                    small Аддаптивная вёрстка
+
+          
+
+
+  include ./inc/footer.pug

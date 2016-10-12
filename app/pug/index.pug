@@ -1,18 +1,14 @@
-doctype html
-html(lang="en")
-  include ./inc/head.pug
-  body
-    include ./inc/aside.pug
+include ./inc/head.pug
+body
+  include ./inc/aside.pug
 
-    main.main-page
+  main
+    .main-page
       .wrapper
         .bg
           .content
             h1.typist
             div.more
-              +btn("btn btn-danger", "Подробнее")
+              a(href="#" class="btn btn-danger") Подробнее
 
-
-
-
-    include ./inc/footer.pug
+  include ./inc/footer.pug

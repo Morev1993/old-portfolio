@@ -18,6 +18,8 @@ body {
 	margin: 0;
 }
 
+@offset: 5rem;
+
 h1 {
 	.f-XXL;
 	.ffheadings;
@@ -70,7 +72,7 @@ header {
 .main-page {
 	margin-left: 72px;
     height: 100vh;
-   	padding: 0px;
+   	padding: 15px;
    	min-height: 500px;
    	transition: all .3s ease;
    	&.slide-left {
@@ -78,6 +80,9 @@ header {
    	}
    	&.in {
    		padding: 30px;
+   	}
+   	&.out {
+   		padding: 0px;
    	}
    	.wrapper {
    		position: relative;
@@ -111,23 +116,62 @@ header {
 			}
 		}
    	}
+
+   	.more {
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.7s ease;
+		position: relative;
+		top: 20px;
+		left: 0;
+		.btn {
+			font-size: 15px;
+		}
+		&.showed {
+			visibility: visible;
+			opacity: 1;
+			top: 0;
+			left: 0;
+		}
+	}
 }
 
-.more {
-	visibility: hidden;
-	opacity: 0;
-	transition: all 0.7s ease;
-	position: relative;
-	top: 20px;
-	left: 0;
-	.btn {
-		font-size: 15px;
+.typepage {
+	margin-left: 72px;
+	padding-top: @offset;
+	margin-bottom: @offset;
+	.six {
+		img {
+			width: 120px;
+		}
 	}
-	&.showed {
-		visibility: visible;
-		opacity: 1;
-		top: 0;
-		left: 0;
+}
+
+.pr-list {
+	.pr-item {
+		margin-bottom: 30px;
+		.inner {
+			box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+			padding: 15px 15px 5px;
+			.img-wr {
+				margin-bottom: 15px;
+				img {
+					max-width: 100%;
+				}
+			}
+
+			h4 {
+				margin-bottom: 4px;
+			}
+			small {
+				color: gray;
+			}
+			.content {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+		
 	}
 }
 
