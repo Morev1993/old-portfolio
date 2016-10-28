@@ -1,34 +1,73 @@
 <!DOCTYPE html>
 <html lang="en"></html>
 <head>
-  <title>Игорь Морев</title>
+  <title>Igor Morev | Frontend developer</title>
   <meta charset="utf-8">
   <link href="css/main.css" rel="stylesheet">
   <script src="vendor/modernizr-custom.js"></script>
 </head>
 <body>
-  <header>
-    <div class="t-C"><img class="burger-menu" src="/img/burger-menu.png"></div>
-    <div class="social t-C"><img class="img-responsive" src="/img/fb-ic.png"><img class="img-responsive" src="/img/ln-ic.png"></div>
-  </header>
   <main>
+    <div class="bg-overlay"></div>
+    <header class="top-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-4 logo">
+            <p><b>Igor Morev</b></p>
+            <p>Frontend developer</p>
+          </div>
+          <div class="col-xs-8 navigation">
+            <ul class="list-unstyled pull-right">
+              <li><a href="#">projects</a></li>
+              <li><a href="#">info</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
     <div class="main-page">
-      <div class="wrapper">
-        <div class="bg">
-          <div class="content">
-            <h1 class="typist"></h1>
-            <div class="more"><a class="btn btn-danger" href="#">Подробнее</a></div>
+      <div class="projects">
+        <div class="project">
+          <div class="bg"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-offset-2 col-sm-6">
+                <div class="preview">
+                  <ul class="project-nav list-unstyled">
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">technologies</a></li>
+                    <li><a href="#">tasks</a></li>
+                    <li><a href="#">resources</a></li>
+                  </ul>
+                  <h1>CardPay Dashboard</h1>
+                  <div class="line"></div>
+                  <p>CardPay offers excellent bank card e-payment conditions for online shopping. We provide extremely competitive and incredibly effective online payment services for your website on a 24-hour basis. Contact us and we’ll find the best solution for you.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <ul class="list-unstyled">
+              <li><a href="#"><img src="/img/fb-ic.png" alt="alt"></a></li>
+              <li><a href="#"><img src="/img/in-ic.png" alt="alt"></a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 t-R">
+            <p>2016</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/jquery.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
+    <script src="js/common.js"></script>
   </main>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/fullpage.js/vendors/scrolloverflow.min.js"></script>
-  <script src="bower_components/fullpage.js/jquery.fullPage.js"></script>
-  <script src="bower_components/jquery.typist/dist/jquery.typist.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/jquery.gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
-  <script src="js/common.js"></script>
 </body>

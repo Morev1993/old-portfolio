@@ -1,14 +1,27 @@
 include ./inc/head.pug
 body
-  include ./inc/aside.pug
-
   main
+    .bg-overlay
+    include ./inc/header.pug
     .main-page
-      .wrapper
-        .bg
-          .content
-            h1.typist
-            div.more
-              a(href="#" class="btn btn-danger") Подробнее
+      .projects
+        .project
+          .bg
+          .container
+            .row
+              .col-sm-offset-2.col-sm-6
+                .preview
+                  ul.project-nav.list-unstyled
+                    li
+                      a(href="#") about
+                    li
+                      a(href="#") technologies
+                    li
+                      a(href="#") tasks
+                    li
+                      a(href="#") resources
+                  h1 CardPay Dashboard
+                  .line
+                  p CardPay offers excellent bank card e-payment conditions for online shopping. We provide extremely competitive and incredibly effective online payment services for your website on a 24-hour basis. Contact us and we’ll find the best solution for you.
 
-  include ./inc/footer.pug
+    include ./inc/footer.pug
