@@ -6,22 +6,46 @@ body
     .main-page
       .projects
         .project
-          .bg
+          .bg(style="background: url('/img/project-bg.jpg') no-repeat 50% 50%")
           .container
+            .controls
+              a(href="#").arrow-right.arrow
+              a(href="#").arrow-left.arrow
+            .dots
             .row
-              .col-sm-offset-2.col-sm-6
+              .col-sm-offset-2.col-sm-7
                 .preview
-                  ul.project-nav.list-unstyled
-                    li
+                  ul.project-nav.list-unstyled.tabs
+                    li.tab
                       a(href="#") about
-                    li
+                    li.tab
                       a(href="#") technologies
-                    li
+                    li.tab
                       a(href="#") tasks
-                    li
+                    li.tab
                       a(href="#") resources
-                  h1 CardPay Dashboard
-                  .line
-                  p CardPay offers excellent bank card e-payment conditions for online shopping. We provide extremely competitive and incredibly effective online payment services for your website on a 24-hour basis. Contact us and we’ll find the best solution for you.
+                  .tab-content
+                    .tab-item
+                      h1 CardPay Dashboard
+                      .line
+                      p CardPay offers excellent bank card e-payment conditions for online shopping. We provide
+                        | extremely competitive and incredibly effective online payment services for your website on
+                        | a 24-hour basis. Contact us and we’ll find the best solution for you.
+                      .more
+                    .tab-item
+                      h2 Used technologies
+                      ul
+                        li HTML5, SASS, vanilla js
+                        li HTML5, SASS, vanilla js
+                    .tab-item
+                      h2 tasks
+                      ul
+                        li HTML5, SASS, vanilla js
+                        li HTML5, SASS, vanilla js
+                    .tab-item
+                      h2 resources
+                      ul
+                        li HTML5, SASS, vanilla js
+                        li HTML5, SASS, vanilla js
 
     include ./inc/footer.pug

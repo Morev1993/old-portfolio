@@ -13,12 +13,12 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-4 logo">
-            <p><b>Igor Morev</b></p>
-            <p>Frontend developer</p>
+            <p class="name">Igor Morev</p>
+            <p class="job">Frontend developer</p>
           </div>
           <div class="col-xs-8 navigation">
             <ul class="list-unstyled pull-right">
-              <li><a href="#">projects</a></li>
+              <li class="active"><a href="#">projects</a></li>
               <li><a href="#">info</a></li>
             </ul>
           </div>
@@ -28,20 +28,51 @@
     <div class="main-page">
       <div class="projects">
         <div class="project">
-          <div class="bg"></div>
+          <div class="bg" style="background: url('/img/project-bg.jpg') no-repeat 50% 50%"></div>
           <div class="container">
+            <div class="controls"><a class="arrow-right arrow" href="#"></a><a class="arrow-left arrow" href="#"></a></div>
+            <div class="dots"></div>
             <div class="row">
-              <div class="col-sm-offset-2 col-sm-6">
+              <div class="col-sm-offset-2 col-sm-7">
                 <div class="preview">
-                  <ul class="project-nav list-unstyled">
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">technologies</a></li>
-                    <li><a href="#">tasks</a></li>
-                    <li><a href="#">resources</a></li>
+                  <ul class="project-nav list-unstyled tabs">
+                    <li class="tab"><a href="#">about</a></li>
+                    <li class="tab"><a href="#">technologies</a></li>
+                    <li class="tab"><a href="#">tasks</a></li>
+                    <li class="tab"><a href="#">resources</a></li>
                   </ul>
-                  <h1>CardPay Dashboard</h1>
-                  <div class="line"></div>
-                  <p>CardPay offers excellent bank card e-payment conditions for online shopping. We provide extremely competitive and incredibly effective online payment services for your website on a 24-hour basis. Contact us and we’ll find the best solution for you.</p>
+                  <div class="tab-content">
+                    <div class="tab-item">
+                      <h1>CardPay Dashboard</h1>
+                      <div class="line"></div>
+                      <p>CardPay offers excellent bank card e-payment conditions for online shopping. We provide
+                        extremely competitive and incredibly effective online payment services for your website on
+                        a 24-hour basis. Contact us and we’ll find the best solution for you.
+                      </p>
+                      <div class="more"></div>
+                    </div>
+                    <div class="tab-item">
+                      <h2>Used technologies</h2>
+                      <ul>
+                        <li>HTML5, SASS, vanilla js</li>
+                        <li>HTML5, SASS, vanilla js</li>
+                      </ul>
+                    </div>
+                    <div class="tab-item">
+                      <h2>tasks</h2>
+                      <ul>
+                        <li>HTML5, SASS, vanilla js</li>
+                        <li>HTML5, SASS, vanilla js</li>
+                      </ul>
+                    </div>
+                    <div class="tab-item">
+                      <h2>resources</h2>
+                      <ul>
+                        <li>HTML5, SASS, vanilla js</li>
+                        <li>HTML5, SASS, vanilla js</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -65,6 +96,7 @@
       </div>
     </footer>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/js/tab.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/jquery.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>

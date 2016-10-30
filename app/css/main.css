@@ -2542,7 +2542,7 @@ output {
   padding-top: 7px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555555;
+  color: #878889;
 }
 .form-control {
   display: block;
@@ -2551,7 +2551,7 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555555;
+  color: #878889;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -3933,7 +3933,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 14px;
   font-weight: normal;
   line-height: 1;
-  color: #555555;
+  color: #878889;
   text-align: center;
   background-color: #eeeeee;
   border: 1px solid #ccc;
@@ -4075,7 +4075,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #555555;
+  color: #878889;
   background-color: #fff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
@@ -7068,6 +7068,13 @@ body {
   margin: 0;
   color: white;
 }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 0;
+}
 h1 {
   font-size: 5rem;
   line-height: 7.14285714rem;
@@ -7075,6 +7082,10 @@ h1 {
   font-weight: 700;
   font-style: normal;
   margin-bottom: 20px;
+}
+ul {
+  padding: 0;
+  list-style: none;
 }
 .btn {
   padding: 7px 24px;
@@ -7095,6 +7106,7 @@ a:focus {
 }
 .container {
   position: relative;
+  z-index: 1;
 }
 header {
   padding-top: 20px;
@@ -7109,8 +7121,32 @@ header .navigation ul li {
   float: left;
   margin-right: 30px;
 }
+header .navigation ul li a {
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all .24s;
+  transition: all .24s;
+}
+header .navigation ul li a:hover {
+  color: #878889;
+}
+header .navigation ul li.active a {
+  padding-bottom: 10px;
+  color: #878889;
+  border-bottom: 3px solid white;
+}
 header .navigation ul li:last-child {
   margin-right: 0;
+}
+.logo .name {
+  margin-bottom: 0px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.logo .job {
+  color: #878889;
+  font-size: 1.2rem;
+  line-height: 1.71428571rem;
 }
 main {
   background: url('../img/bg.jpg') no-repeat 50% 50%;
@@ -7129,34 +7165,53 @@ main .bg-overlay {
 main .main-page {
   height: -webkit-calc(100vh - 116px);
   height: calc(100vh - 116px);
-  min-height: 500px;
+  min-height: 580px;
 }
-.projects {
-  padding-top: 10rem;
+.controls .arrow-right,
+.controls .arrow-left {
+  position: absolute;
+  top: 50%;
+  width: 115px;
+  height: 17px;
+  background-size: contain;
+  display: block;
 }
-.projects .bg {
+.controls .arrow-right {
+  background: url('../img/ar-right.png') no-repeat;
+  right: 15px;
+}
+.controls .arrow-left {
+  background: url('../img/ar-left.png') no-repeat;
+  left: 15px;
+}
+.project .bg {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: url('../img/project-bg.jpg') no-repeat 50% 50%;
-  background-size: cover;
+  background-size: cover !important;
   z-index: 1;
-  clip: rect(100px, 1200px, 600px, 700px);
   -webkit-transition: all 1.1s;
   transition: all 1.1s;
   -o-will-change: clip;
   -moz-will-change: clip;
   -webkit-will-change: clip;
   will-change: clip;
+  clip: rect(225px, 85vw, 650px, 85vw);
 }
-.projects .bg.js-full {
+.project.js-slide-left .bg {
+  clip: rect(225px, 80vw, 650px, 50vw);
+}
+.project.js-full .bg {
   clip: rect(0, 100vw, 100vh, 0);
+}
+.projects {
+  padding-top: 15rem;
 }
 .projects .line {
   width: 50px;
-  height: 3px;
+  height: 2px;
   background: white;
   margin-bottom: 30px;
 }
@@ -7165,15 +7220,31 @@ main .main-page {
   z-index: 5;
 }
 .projects .preview .project-nav {
-  width: 100%;
-  float: left;
   font-size: 1.2rem;
   line-height: 1.71428571rem;
-  margin-bottom: 10rem;
+  margin-bottom: 9rem;
+}
+.projects .preview .project-nav:after {
+  content: '';
+  clear: both;
+  display: block;
 }
 .projects .preview .project-nav li {
   float: left;
   margin-right: 20px;
+}
+.projects .preview .project-nav li a {
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all .24s;
+  transition: all .24s;
+}
+.projects .preview .project-nav li a:hover {
+  color: #878889;
+}
+.projects .preview .project-nav li.active a {
+  padding-bottom: 10px;
+  color: #878889;
+  border-bottom: 3px solid white;
 }
 .projects .preview .project-nav li:last-child {
   margin-right: 0;
