@@ -1,6 +1,4 @@
 $(document).ready(() => {
-	$('.project').toggleClass('js-slide-left');
-
 	$(document).click(()=> {
     	$('.project').addClass('js-full');
 		$('.arrow').fadeOut();
@@ -11,5 +9,16 @@ $(document).ready(() => {
 		$(".tab").removeClass("active").eq($(this).index()).addClass("active");
 		$(".tab-item").hide().eq($(this).index()).fadeIn()
 	}).eq(0).addClass("active");
+
+	function pageIntro() {
+		$('.project').toggleClass('js-slide-left');
+
+		$.get( "http://localhost/personal/wp-json/wp/v2/posts?filter[name]=axios-engeeniring", function( data ) {
+			console.log(data);
+		});
+	}
+
+	page('/', pageIntro)
+	page()
 
 });
