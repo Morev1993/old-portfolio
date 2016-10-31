@@ -13,7 +13,7 @@ $(document).ready(() => {
 	function pageIntro() {
 		$('.project').toggleClass('js-slide-left');
 
-		$.get( "http://localhost/personal/wp-json/wp/v2/posts?filter[name]=axios-engeeniring", function( data ) {
+		$.get( "http://localhost/personal/wp-json/wp/v2/posts/5", function( data ) {
 			console.log(data);
 		});
 	}
