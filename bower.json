@@ -15,9 +15,7 @@
     "jquery": "^3.1.1",
     "modernizr": "^3.3.1",
     "bootstrap": "^3.3.7",
-    "fullpage.js": "^2.8.6",
-    "jquery.typist": "^0.0.7",
-    "animate.css": "^3.5.2",
-    "page": "visionmedia/page.js#^1.7.1"
+    "page": "visionmedia/page.js#^1.7.1",
+    "handlebars": "^4.0.5"
   }
 }
