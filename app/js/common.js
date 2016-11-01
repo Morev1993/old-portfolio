@@ -17,11 +17,19 @@ $(document).ready(() => {
 
 	function pageIntro(id) {
 		$.get( "http://localhost/personal/wp-json/wp/v2/posts?filter[name]=" + id + "", function( data ) {
-			console.log(data);
-			$('#project-block').html(projectTmpl(data[0]));
-			$('.project').addClass('js-slide-left');
-			setTabs();
+			if (data.length) {
+				$('#project-block').html(projectTmpl(data[0]));
+				$('.project').addClass('js-slide-left');
+				setTabs();
+			} else {
+				$('#project-block').html(404);
+			}
 		});
+	}
+
+	function notFound() {
+		console.log(121);
+		$('#project-block').html(404);
 	}
 
 	page('/', function() {
@@ -34,6 +42,7 @@ $(document).ready(() => {
 		console.log(ctx);
 		pageIntro(ctx.params.id);
 	})
+	page('*', notFound)
 	page()
 
 });
