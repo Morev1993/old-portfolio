@@ -27,7 +27,7 @@
     </header>
     <div class="main-page">
       <div class="projects">
-        <div id="project-block" class="project"></div>
+          <div id="project-block" class="project"></div>
       </div>
     </div>
     <footer>
@@ -46,6 +46,7 @@
 
         <script id="project" type="text/x-handlebars-template">
           <div class="bg" style="background: url({{fi_full}}) no-repeat 50% 50%"></div>
+          <div class="shadow"></div>
           <div class="container">
             <div class="controls">
               {{#if prev_post}}
@@ -83,9 +84,9 @@
                     <div class="tab-item">
                       <h1>{{title.rendered}}</h1>
                       <div class="line"></div>
-                      <p>{{text}}</p>
+                      <p class="m-b-3">{{text}}</p>
                       <div>
-                        <button id="show-detail" class="detail-button">Show case</button>
+                        <button id="show-detail" class="btn btn-success">Show case</button>
                       </div>
                       <div class="more"></div>
                     </div>
@@ -120,9 +121,12 @@
         <script id="info" type="text/x-handlebars-template">
           <div class="container">
             <div class="info row">
-              <div class="col-sm-offset-2">
+              <div class="col-sm-offset-2 col-sm-7">
                 <h1>About me</h1>
-                <p>La la la</p>
+                <p>Hi, my name is Igor Morev and i frontend developer. I've been doing web development for over two years and using the latest technologies. I worked in web-studios and other relevant offices. I create stunning websites, SPA-applications using html5,
+                    jQuery, angular.js, react, node.js, php, gulp,
+                    webpack and other ...</p>
+                <p>Currently available for freelance projects.<br/> Send your offer on my mail morev.i@mail.ru</p>
               </div>
             </div>
           </div>

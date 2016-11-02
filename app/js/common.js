@@ -18,7 +18,7 @@ $(document).ready(() => {
 			e.preventDefault();
 			$project.addClass('js-full');
 			$(".tab").removeClass("active").eq($(this).index()).addClass("active");
-			$(".tab-item").hide().eq($(this).index()).fadeIn()
+			$(".tab-item").hide().eq($(this).index()).show()
 		}).eq(0).addClass("active");
 	}
 
@@ -26,7 +26,6 @@ $(document).ready(() => {
 		$project.removeClass('js-slide-left');
 		$.get( "http://localhost/personal/wp-json/wp/v2/posts?filter[name]=" + id + "", function( data ) {
 			if (data.length) {
-				console.log(data[0]);
 				$projectBlock.html(projectTmpl(data[0]));
 				$('.tab-item').addClass('hidy');
 				setTimeout(function() {

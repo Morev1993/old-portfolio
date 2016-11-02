@@ -7089,7 +7089,34 @@ ul {
   list-style: none;
 }
 .btn {
-  padding: 7px 24px;
+  padding: 13px 34px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-transition: all .24s;
+  transition: all .24s;
+  text-transform: lowercase;
+}
+.btn:hover,
+.btn:focus {
+  border: none;
+  outline: none !important;
+}
+.btn-success {
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 1.2rem;
+  line-height: 1.71428571rem;
+  font-weight: bold;
+  border: none;
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+  background: rgba(255, 255, 255, 0.35) !important;
+  border: none;
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 a:hover,
 button:hover,
@@ -7175,39 +7202,43 @@ main .main-page {
 .controls .arrow-right,
 .controls .arrow-left {
   position: absolute;
-  top: 50%;
+  top: 433px;
   width: 115px;
-  height: 17px;
+  height: 30px;
   background-size: contain;
   display: block;
-  margin-top: -50px;
   z-index: 100;
+  margin-top: -15px;
 }
 .controls .arrow-right {
-  background: url('../img/ar-right.png') no-repeat;
+  background: url('../img/ar-right.png') no-repeat left center;
   right: 10%;
 }
 .controls .arrow-left {
-  background: url('../img/ar-left.png') no-repeat;
+  background: url('../img/ar-left.png') no-repeat left center;
   left: 10%;
 }
 .controls .dots {
   position: absolute;
   z-index: 100;
-  bottom: -webkit-calc(50vh - 300px);
-  bottom: calc(50vh - 300px);
+  bottom: -webkit-calc(50% - 300px);
+  bottom: calc(50% - 300px);
   left: 0;
   width: 100%;
   text-align: center;
 }
 .controls .dots a {
   display: inline-block;
-  width: 50px;
+  width: 30px;
   height: 3px;
   background: #fff;
   opacity: .5;
   -webkit-transition: opacity .24s;
   transition: opacity .24s;
+  margin-right: 3px;
+}
+.controls .dots a:last-child {
+  margin-right: 0;
 }
 .controls .dots a:hover {
   opacity: 1;
@@ -7226,19 +7257,48 @@ main .main-page {
   -moz-will-change: clip;
   -webkit-will-change: clip;
   will-change: clip;
-  clip: rect(225px, 85vw, 650px, 85vw);
+  clip: rect(225px, 86vw, 650px, 86vw);
+}
+.project .shadow {
+  position: absolute;
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  top: 225px;
+  left: 86vw;
+  height: 425px;
+  width: 0;
+  z-index: 1;
+  -webkit-transition: all 1.1s;
+  transition: all 1.1s;
 }
 .project.js-slide-left .bg {
   clip: rect(225px, 80vw, 650px, 50vw);
 }
+.project.js-slide-left .shadow {
+  left: 50vw;
+  width: 30vw;
+}
 .project.js-slide-right .bg {
-  clip: rect(225px, 45vw, 650px, 45vw);
+  clip: rect(225px, 46vw, 650px, 46vw);
+}
+.project.js-slide-right .shadow {
+  left: 46vw;
+  width: 0;
 }
 .project.js-full .bg {
   clip: rect(0, 100vw, 100vh, 0);
 }
+.project.js-full .shadow {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
 .projects {
   padding-top: 15rem;
+}
+.projects p {
+  line-height: 25px;
 }
 .projects .line {
   width: 50px;
