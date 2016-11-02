@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import "../bower_components/animate.css/animate.min.css";
 @import "../fonts/opensans/opensans.css";
 html {
   font-family: sans-serif;
@@ -7190,6 +7191,27 @@ main .main-page {
   background: url('../img/ar-left.png') no-repeat;
   left: 10%;
 }
+.controls .dots {
+  position: absolute;
+  z-index: 100;
+  bottom: -webkit-calc(50vh - 300px);
+  bottom: calc(50vh - 300px);
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.controls .dots a {
+  display: inline-block;
+  width: 50px;
+  height: 3px;
+  background: #fff;
+  opacity: .5;
+  -webkit-transition: opacity .24s;
+  transition: opacity .24s;
+}
+.controls .dots a:hover {
+  opacity: 1;
+}
 .project .bg {
   position: absolute;
   top: 0;
@@ -7257,6 +7279,21 @@ main .main-page {
 }
 .projects .preview .project-nav li:last-child {
   margin-right: 0;
+}
+.info {
+  position: relative;
+  z-index: 100;
+  color: #fff;
+}
+.tab-item {
+  -webkit-transition: opacity .24s;
+  transition: opacity .24s;
+  opacity: 1;
+  visibility: visible;
+}
+.tab-item.hidy {
+  opacity: 0;
+  visibility: hidden;
 }
 footer {
   font-size: 1.2rem;

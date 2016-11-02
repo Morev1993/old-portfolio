@@ -23,14 +23,18 @@ $(document).ready(() => {
 	}
 
 	function pageIntro(id) {
+		$project.removeClass('js-slide-left');
 		$.get( "http://localhost/personal/wp-json/wp/v2/posts?filter[name]=" + id + "", function( data ) {
 			if (data.length) {
+				console.log(data[0]);
 				$projectBlock.html(projectTmpl(data[0]));
+				$('.tab-item').addClass('hidy');
 				setTimeout(function() {
 					$('.bg-overlay').addClass('light');
 					$project.addClass('js-slide-left');
 					$project.removeClass('js-slide-right');
 					$project.removeClass('js-full');
+					$('.tab-item').removeClass('hidy');;
 				}, 200)
 				setTabs();
 			} else {
@@ -40,12 +44,12 @@ $(document).ready(() => {
 	}
 
 	function info() {
-		$project.removeClass('js-slide-left');
-		$project.removeClass('js-full');
+		$project.removeClass('js-slide-left').removeClass('js-full');
+		$('.tab-item').addClass('hidy');
 		$('.bg-overlay').removeClass('light');
 		setTimeout(function() {
 			$projectBlock.html(infoTmpl());
-		}, 1200);
+		}, 1100);
 	}
 
 	function notFound() {
@@ -53,25 +57,27 @@ $(document).ready(() => {
 	}
 
 	function redirectToIntro() {
-		page.redirect('/projects/cardpay-dashboard/');
+		page.redirect('/projects/axios-engeeniring/');
 	}
 
 	$body.on('click', '.arrow-right', function(e) {
 		e.preventDefault();
+		$('.tab-item').addClass('hidy');
 		$('.bg-overlay').removeClass('light');
 		$project.removeClass('js-slide-left');
 		setTimeout(function() {
 			page(e.target.pathname);
-		}, 1000)
+		}, 1100);
 	});
 
 	$body.on('click', '.arrow-left', function(e) {
 		e.preventDefault();
+		$('.tab-item').addClass('hidy');
 		$('.bg-overlay').removeClass('light');
 		$project.addClass('js-slide-right');
 		setTimeout(function() {
 			page(e.target.pathname);
-		}, 1000)
+		}, 1100);
 	});
 
 	page('/', redirectToIntro)

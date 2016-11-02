@@ -45,13 +45,23 @@
         </div>
 
         <script id="project" type="text/x-handlebars-template">
-          <div class="bg" style="background: url('/img/project-bg.jpg') no-repeat 50% 50%"></div>
+          <div class="bg" style="background: url({{fi_full}}) no-repeat 50% 50%"></div>
           <div class="container">
             <div class="controls">
-              <a class="arrow-left arrow" href="/projects/cardpay-dashboard/"></a>
-              <a class="arrow-right arrow" href="/projects/axios-engeeniring/"></a>
+              {{#if prev_post}}
+                <a class="arrow-left arrow" href="/projects/{{prev_post}}/"></a>
+              {{/if}}
+              {{#if next_post}}
+                <a class="arrow-right arrow" href="/projects/{{next_post}}/"></a>
+              {{/if}}
+
+              <div class="dots">
+                {{#each posts}}
+                  <a href="/projects/{{post_name}}/"></a>
+                {{/each}}
+              </div>
+
             </div>
-            <div class="dots"></div>
             <div class="row">
               <div class="col-sm-offset-2 col-sm-7">
                 <div class="preview">
@@ -73,7 +83,7 @@
                     <div class="tab-item">
                       <h1>{{title.rendered}}</h1>
                       <div class="line"></div>
-                      {{content.rendered}}
+                      <p>{{text}}</p>
                       <div>
                         <button id="show-detail" class="detail-button">Show case</button>
                       </div>
@@ -109,8 +119,12 @@
 
         <script id="info" type="text/x-handlebars-template">
           <div class="container">
-            <h1>About me</h1>
-            <p>La la la</p>
+            <div class="info row">
+              <div class="col-sm-offset-2">
+                <h1>About me</h1>
+                <p>La la la</p>
+              </div>
+            </div>
           </div>
         </script>
 
