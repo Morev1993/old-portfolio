@@ -7105,7 +7105,6 @@ a:focus {
   color: white;
 }
 .container {
-  position: relative;
   z-index: 1;
 }
 header {
@@ -7175,14 +7174,15 @@ main .main-page {
   height: 17px;
   background-size: contain;
   display: block;
+  margin-top: -50px;
 }
 .controls .arrow-right {
   background: url('../img/ar-right.png') no-repeat;
-  right: 15px;
+  right: 10%;
 }
 .controls .arrow-left {
   background: url('../img/ar-left.png') no-repeat;
-  left: 15px;
+  left: 10%;
 }
 .project .bg {
   position: absolute;
@@ -7202,6 +7202,9 @@ main .main-page {
 }
 .project.js-slide-left .bg {
   clip: rect(225px, 80vw, 650px, 50vw);
+}
+.project.js-slide-right .bg {
+  clip: rect(225px, 45vw, 650px, 45vw);
 }
 .project.js-full .bg {
   clip: rect(0, 100vw, 100vh, 0);

@@ -51,7 +51,6 @@ a {
 }
 
 .container {
-	position: relative;
 	z-index: 1;
 }
 
@@ -126,15 +125,16 @@ main {
 		height: 17px;
 		background-size: contain;
 		display: block;
+		margin-top: -50px;
 	}
 	.arrow-right {
 		background: url('../img/ar-right.png') no-repeat;
-		right: 15px;
+		right: 10%;
 	}
 
 	.arrow-left {
 		background: url('../img/ar-left.png') no-repeat;
-		left: 15px;
+		left: 10%;
 	}
 
 }
@@ -157,7 +157,12 @@ main {
 	}
 	&.js-slide-left {
 		.bg {
-			clip: rect(225px, 80vw, 650px, 100vw / 2);
+			clip: rect(225px, 80vw, 650px, 50vw);
+		}
+	}
+	&.js-slide-right {
+		.bg {
+			clip: rect(225px, 45vw, 650px, 45vw);
 		}
 	}
 	&.js-full {

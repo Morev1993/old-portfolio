@@ -19,7 +19,10 @@ $(document).ready(() => {
 		$.get( "http://localhost/personal/wp-json/wp/v2/posts?filter[name]=" + id + "", function( data ) {
 			if (data.length) {
 				$('#project-block').html(projectTmpl(data[0]));
-				$('.project').addClass('js-slide-left');
+				setTimeout(function() {
+					$('.project').addClass('js-slide-left');
+					$('.project').removeClass('js-slide-right');
+				}, 200)
 				setTabs();
 			} else {
 				$('#project-block').html(404);
@@ -28,9 +31,24 @@ $(document).ready(() => {
 	}
 
 	function notFound() {
-		console.log(121);
 		$('#project-block').html(404);
 	}
+
+	$('html, body').on('click', '.arrow-right', function(e) {
+		e.preventDefault();
+		$('.project').removeClass('js-slide-left');
+		setTimeout(function() {
+			page(e.target.pathname);
+		}, 1000)
+	});
+
+	$('html, body').on('click', '.arrow-left', function(e) {
+		e.preventDefault();
+		$('.project').addClass('js-slide-right');
+		setTimeout(function() {
+			page(e.target.pathname);
+		}, 1000)
+	});
 
 	page('/', function() {
 		page.redirect('/projects/cardpay-dashboard/')
@@ -39,7 +57,6 @@ $(document).ready(() => {
 		page.redirect('/projects/cardpay-dashboard/')
 	})
 	page('/projects/:id', function(ctx) {
-		console.log(ctx);
 		pageIntro(ctx.params.id);
 	})
 	page('*', notFound)
