@@ -7159,6 +7159,11 @@ main .bg-overlay {
   right: 0;
   bottom: 0;
   z-index: 0;
+  -webkit-transition: all 1.1s;
+  transition: all 1.1s;
+  background: rgba(0, 0, 0, 0.8);
+}
+main .bg-overlay.light {
   background: rgba(0, 0, 0, 0.55);
 }
 main .main-page {
@@ -7175,6 +7180,7 @@ main .main-page {
   background-size: contain;
   display: block;
   margin-top: -50px;
+  z-index: 100;
 }
 .controls .arrow-right {
   background: url('../img/ar-right.png') no-repeat;
