@@ -20,17 +20,42 @@ body {
 
 h1, h2, h3, h4, h5 {
 	margin-top: 0;
+	.ffheadings;
 }
 
 h1 {
 	.f-XXL;
-	.ffheadings;
+	margin-bottom: 20px;
+}
+
+.list-unstyled {
+	li {
+		&:before {
+			display: none;
+		}
+	}
+}
+
+h2 {
 	margin-bottom: 20px;
 }
 
 ul {
 	padding: 0;
 	list-style: none;
+	li {
+		&:before {
+			content: '';
+			width: 18px;
+			height: 1px;
+			background: white;
+			display: inline-block;
+			display: inline-block;
+			position: relative;
+			top: -5px;
+			margin-right: 10px;
+		}
+	}
 }
 
 .btn {
@@ -95,7 +120,7 @@ header {
 						display: block;
 						position: relative;
 						top: 11px;
-						transition: width 1.1s;
+						transition: width .6s;
 					}
 					transition: all .24s;
 					&:hover {
@@ -106,6 +131,7 @@ header {
 					a {
 						padding-bottom: 10px;
 						color: @gray;
+						user-events: none;
 					}
 					&.js-stroke {
 						a {
@@ -158,6 +184,12 @@ main {
 }
 
 .controls {
+	&.js-showed {
+		.arrow-right, .arrow-left, .dots {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
 	.arrow-right, .arrow-left {
 		position: absolute;
 		top: 433px;
@@ -167,6 +199,9 @@ main {
 		display: block;
 		z-index: 100;
 		margin-top: -15px;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity .24s;
 	}
 	.arrow-right {
 		background: url('../img/ar-right.png') no-repeat left center;
@@ -184,6 +219,9 @@ main {
 	    left: 0;
 	    width: 100%;
 	    text-align: center;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity .24s;
 		a {
 			display: inline-block;
 			width: 30px;
@@ -278,40 +316,35 @@ main {
 	.preview {
 		position: relative;
 		z-index: 5;
-		.project-nav {
-			opacity: 0;
-			visibility: hidden;
-			&.visible {
-				opacity: 1;
-				visibility: visible;
+	}
+	.project-nav {
+		opacity: 0;
+		visibility: hidden;
+		&:after {
+			content: '';
+			clear: both;
+			display: block;
+		}
+		.f-S;
+		li {
+			float: left;
+			margin-right: 20px;
+			a {
+				border-bottom: 3px solid transparent;
+				transition: all .24s;
+				&:hover {
+					color: @gray;
+				}
 			}
-			&:after {
-				content: '';
-				clear: both;
-				display: block;
-			}
-			.f-S;
-			margin-bottom: 9rem;
-			li {
-				float: left;
-				margin-right: 20px;
+			&.active {
 				a {
-					border-bottom: 3px solid transparent;
-					transition: all .24s;
-					&:hover {
-						color: @gray;
-					}
+					padding-bottom: 10px;
+					color: @gray;
+					border-bottom: 3px solid white;
 				}
-				&.active {
-					a {
-						padding-bottom: 10px;
-						color: @gray;
-						border-bottom: 3px solid white;
-					}
-				}
-				&:last-child {
-					margin-right: 0;
-				}
+			}
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 	}
@@ -321,6 +354,8 @@ main {
 	transition: opacity .24s;
 	opacity: 1;
 	visibility: visible;
+	margin-top: 9rem;
+	transition: margin-top .5s;
 	&.hidy {
 		opacity: 0;
 		visibility: hidden;
@@ -331,6 +366,45 @@ main {
 	position: relative;
 	z-index: 100;
 	color: #fff;
+}
+
+.more {
+	opacity: 0;
+	visibility: hidden;
+	.ic-group {
+		margin-left: 10%;
+		.ic {
+			display: inline-block;
+			margin-right: 20px;
+			&:last-child {
+				margin-right: 0;
+			}
+			img {
+				width: 40px;
+				margin: auto;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+.js-detail {
+	.more {
+		opacity: 1;
+		visibility: visible;
+	}
+	.project-nav {
+		opacity: 1;
+		visibility: visible;
+	}
+	.tab-content {
+		margin-top: 5rem;
+	}
+}
+
+.visible {
+	opacity: 1;
+	visibility: visible;
 }
 
 footer {

@@ -33,44 +33,62 @@ $(document).ready(() => {
         })
     }
 
+	function hideDetail( ) {
+		$project.removeClass('js-full');
+		$('.project-nav').removeClass('visible');
+		$('#show-detail').fadeIn();
+		$('.bg-overlay').addClass('light');
+		$('.preview').removeClass('js-detail');
+		$(".tab.about").click();
+		$('.controls').addClass('js-showed');
+
+		updateMenuItems(location.pathname);
+	}
+
 
 	$body.on('click', '#show-detail', function() {
 		$('.bg-overlay').removeClass('light');
 		$project.addClass('js-full');
-		$('.controls').fadeOut();
 		$('.project-nav').addClass('visible');
+		$('.preview').addClass('js-detail');
 		$(this).hide();
+		$('.controls').removeClass('js-showed');
+
+		var nav = $('.navigation li');
+        nav.removeClass('active');
 	});
 
 	$body.on('click', '#js-back', function() {
-		$project.removeClass('js-full');
-		$('.controls').fadeIn();
-		$('.project-nav').removeClass('visible');
-		$('#show-detail').fadeIn();
-		$('.bg-overlay').addClass('light');
+		hideDetail();
 	});
 
-	$body.on('click', '.arrow-right', function(e) {
+	$('.navigation li a').on('click', function(e) {
+		var e = e;
+		e.preventDefault();
+
+		var href = e.target.pathname;
+		if (~location.pathname.indexOf('/projects') && href == '/projects') {
+			hideDetail();
+			return;
+		};
+
+		hideDetail();
+		page(href);
+	})
+
+	function triggerSlide(e) {
 		var e = e;
 		e.preventDefault();
 		$('.tab-content').addClass('hidy');
 		$('.bg-overlay').removeClass('light');
+		$('.controls').removeClass('js-showed');
 
 		TweenLite.to(".project", 1, {className:"-=js-slide-left", onComplete: function() {
 			page(e.target.pathname);
 		}});
-	});
+	}
 
-	$body.on('click', '.arrow-left', function(e) {
-		var e = e;
-		e.preventDefault();
-		$('.tab-content').addClass('hidy');
-		$('.bg-overlay').removeClass('light');
-
-		TweenLite.to(".project", 1, {className:"-=js-slide-left", onComplete: function() {
-			page(e.target.pathname);
-		}});
-	});
+	$body.on('click', '.arrow, .dots a', triggerSlide);
 
 	function setTabs() {
 		$(".tab-item").not(":first").hide();
@@ -86,21 +104,24 @@ $(document).ready(() => {
 			if (data.length) {
 				$projectBlock.html(projectTmpl(data[0]));
 
-				TweenLite.to($project, 1, {className:"+=js-slide-left"});
-
 				$('.bg-overlay').addClass('light');
 				setTabs();
+
+				TweenLite.to($project, .6, {className:"+=js-slide-left", onComplete: function() {
+					$('.controls').addClass('js-showed');
+					next();
+				}});
 			} else {
 				$projectBlock.html(404);
+				next();
 			}
-
-			next();
 		});
 	}
 
 	function info(ctx, next) {
 		$('.tab-content').addClass('hidy');
 		$('.bg-overlay').removeClass('light');
+		$('#show-detail').hide();
 
 		$projectBlock.html(infoTmpl());
 
