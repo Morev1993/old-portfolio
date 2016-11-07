@@ -14,6 +14,7 @@ body {
 	padding: 0;
 	margin: 0;
 	color: white;
+	background: black;
 }
 
 @offset: 5rem;
@@ -185,32 +186,89 @@ main {
 
 .controls {
 	&.js-showed {
-		.arrow-right, .arrow-left, .dots {
+		.dots {
 			visibility: visible;
 			opacity: 1;
+		}
+		.arrow-right, .arrow-left {
+			&:hover {
+				.line {
+					opacity: 1;
+				}
+			}
+			.line {
+				opacity: .7;
+				visibility: visible;
+				width: 100%;
+			}
 		}
 	}
 	.arrow-right, .arrow-left {
 		position: absolute;
 		top: 433px;
-		width: 115px;
 		height: 30px;
 		background-size: contain;
 		display: block;
 		z-index: 100;
 		margin-top: -15px;
-		visibility: hidden;
-		opacity: 0;
-		transition: opacity .24s;
+		width: 100px;
+		.line {
+			width: 0;
+			height: 1px;
+			background: white;
+			display: block;
+			position: absolute;
+			top: 15px;
+			opacity: 0;
+			visibility: hidden;
+			transition: all .6s;
+			&:after, &:before {
+				content: '';
+				width: 15px;
+				height: 1px;
+				display: block;
+				position: absolute;
+				background: white;
+
+			}
+		}
 	}
 	.arrow-right {
-		background: url('../img/ar-right.png') no-repeat left center;
 		right: 10%;
+		.line {
+			right: 0;
+			&:after {
+			    top: 0;
+				transform: rotate(-33deg);
+				top: 4px;
+			    right: -1px;
+			}
+			&:before {
+			    top: 0;
+				transform: rotate(	33deg);
+				top: -4px;
+				right: -1px;
+			}
+		}
 	}
 
 	.arrow-left {
-		background: url('../img/ar-left.png') no-repeat left center;
 		left: 10%;
+		.line {
+			left: 0;
+			&:after {
+			    top: 0;
+				transform: rotate(33deg);
+				top: 4px;
+			    left: -1px;
+			}
+			&:before {
+			    top: 0;
+				transform: rotate(-33deg);
+				top: -4px;
+				left: -1px;
+			}
+		}
 	}
 	.dots {
 	    position: absolute;
@@ -304,6 +362,13 @@ main {
 
 .projects {
 	padding-top: @offset * 3;
+	a:not(.arrow) {
+		border-bottom: 1px solid white;
+		transition: border-bottom .24s;
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
+	}
 	p {
 		line-height: 25px;
 	}
@@ -316,6 +381,10 @@ main {
 	.preview {
 		position: relative;
 		z-index: 5;
+		.show-detail {
+			opacity: 0;
+			visibility: hidden;
+		}
 	}
 	.project-nav {
 		opacity: 0;
@@ -329,8 +398,16 @@ main {
 		li {
 			float: left;
 			margin-right: 20px;
+			.back-arrow {
+				position: relative;
+				top: -1px;
+				&:hover {
+					cursor: pointer;
+				}
+			}
 			a {
-				border-bottom: 3px solid transparent;
+				font-weight: normal;
+				border-bottom: 2px solid transparent;
 				transition: all .24s;
 				&:hover {
 					color: @gray;
@@ -340,7 +417,7 @@ main {
 				a {
 					padding-bottom: 10px;
 					color: @gray;
-					border-bottom: 3px solid white;
+					border-bottom: 2px solid white;
 				}
 			}
 			&:last-child {
@@ -380,7 +457,7 @@ main {
 				margin-right: 0;
 			}
 			img {
-				width: 40px;
+				width: 60px;
 				margin: auto;
 				margin-bottom: 1rem;
 			}
@@ -403,15 +480,20 @@ main {
 }
 
 .visible {
-	opacity: 1;
-	visibility: visible;
+	opacity: 1 !important;
+	visibility: visible !important;
 }
+
+
 
 footer {
 	.f-S;
 	height: 32px;
 	position: relative;
 	z-index: 5;
+	img {
+	    width: 17px;
+	}
 	ul {
 		float: left;
 		li {

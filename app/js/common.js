@@ -36,7 +36,7 @@ $(document).ready(() => {
 	function hideDetail( ) {
 		$project.removeClass('js-full');
 		$('.project-nav').removeClass('visible');
-		$('#show-detail').fadeIn();
+		$('#show-detail').addClass('visible');
 		$('.bg-overlay').addClass('light');
 		$('.preview').removeClass('js-detail');
 		$(".tab.about").click();
@@ -45,22 +45,22 @@ $(document).ready(() => {
 		updateMenuItems(location.pathname);
 	}
 
-
-	$body.on('click', '#show-detail', function() {
+	function showDetail() {
 		$('.bg-overlay').removeClass('light');
 		$project.addClass('js-full');
 		$('.project-nav').addClass('visible');
 		$('.preview').addClass('js-detail');
-		$(this).hide();
+		$(this).removeClass('visible');
 		$('.controls').removeClass('js-showed');
 
 		var nav = $('.navigation li');
         nav.removeClass('active');
-	});
+	}
 
-	$body.on('click', '#js-back', function() {
-		hideDetail();
-	});
+
+	$body.on('click', '#show-detail', showDetail);
+
+	$body.on('click', '#js-back', hideDetail);
 
 	$('.navigation li a').on('click', function(e) {
 		var e = e;
@@ -72,6 +72,12 @@ $(document).ready(() => {
 			return;
 		};
 
+		if (~location.pathname.indexOf('/info') && href == '/projects') {
+			TweenLite.to(".project", 1, {className:"-=js-slide-left"});
+			page(href);
+			return;
+		};
+
 		hideDetail();
 		page(href);
 	})
@@ -79,16 +85,19 @@ $(document).ready(() => {
 	function triggerSlide(e) {
 		var e = e;
 		e.preventDefault();
+
+		var pathname = $(this).find('a').attr('href');
+
 		$('.tab-content').addClass('hidy');
 		$('.bg-overlay').removeClass('light');
 		$('.controls').removeClass('js-showed');
 
 		TweenLite.to(".project", 1, {className:"-=js-slide-left", onComplete: function() {
-			page(e.target.pathname);
+			page(pathname);
 		}});
 	}
 
-	$body.on('click', '.arrow, .dots a', triggerSlide);
+	$body.on('click', '.controls', triggerSlide);
 
 	function setTabs() {
 		$(".tab-item").not(":first").hide();
@@ -103,12 +112,14 @@ $(document).ready(() => {
 		$.get( "http://localhost/personal/wp-json/wp/v2/posts?filter[name]=" + ctx.params.id + "", function( data ) {
 			if (data.length) {
 				$projectBlock.html(projectTmpl(data[0]));
+				console.log(data[0]);
 
 				$('.bg-overlay').addClass('light');
 				setTabs();
 
 				TweenLite.to($project, .6, {className:"+=js-slide-left", onComplete: function() {
 					$('.controls').addClass('js-showed');
+					$('#show-detail').addClass('visible');
 					next();
 				}});
 			} else {

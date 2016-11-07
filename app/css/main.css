@@ -7071,6 +7071,7 @@ body {
   padding: 0;
   margin: 0;
   color: white;
+  background: black;
 }
 h1,
 h2,
@@ -7231,34 +7232,98 @@ main .main-page {
   height: calc(100vh - 116px);
   min-height: 580px;
 }
-.controls.js-showed .arrow-right,
-.controls.js-showed .arrow-left,
 .controls.js-showed .dots {
   visibility: visible;
   opacity: 1;
+}
+.controls.js-showed .arrow-right:hover .line,
+.controls.js-showed .arrow-left:hover .line {
+  opacity: 1;
+}
+.controls.js-showed .arrow-right .line,
+.controls.js-showed .arrow-left .line {
+  opacity: .7;
+  visibility: visible;
+  width: 100%;
 }
 .controls .arrow-right,
 .controls .arrow-left {
   position: absolute;
   top: 433px;
-  width: 115px;
   height: 30px;
   background-size: contain;
   display: block;
   z-index: 100;
   margin-top: -15px;
-  visibility: hidden;
+  width: 100px;
+}
+.controls .arrow-right .line,
+.controls .arrow-left .line {
+  width: 0;
+  height: 1px;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 15px;
   opacity: 0;
-  -webkit-transition: opacity .24s;
-  transition: opacity .24s;
+  visibility: hidden;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+.controls .arrow-right .line:after,
+.controls .arrow-left .line:after,
+.controls .arrow-right .line:before,
+.controls .arrow-left .line:before {
+  content: '';
+  width: 15px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  background: white;
 }
 .controls .arrow-right {
-  background: url('../img/ar-right.png') no-repeat left center;
   right: 10%;
 }
+.controls .arrow-right .line {
+  right: 0;
+}
+.controls .arrow-right .line:after {
+  top: 0;
+  -webkit-transform: rotate(-33deg);
+  -ms-transform: rotate(-33deg);
+  transform: rotate(-33deg);
+  top: 4px;
+  right: -1px;
+}
+.controls .arrow-right .line:before {
+  top: 0;
+  -webkit-transform: rotate(33deg);
+  -ms-transform: rotate(33deg);
+  transform: rotate(33deg);
+  top: -4px;
+  right: -1px;
+}
 .controls .arrow-left {
-  background: url('../img/ar-left.png') no-repeat left center;
   left: 10%;
+}
+.controls .arrow-left .line {
+  left: 0;
+}
+.controls .arrow-left .line:after {
+  top: 0;
+  -webkit-transform: rotate(33deg);
+  -ms-transform: rotate(33deg);
+  transform: rotate(33deg);
+  top: 4px;
+  left: -1px;
+}
+.controls .arrow-left .line:before {
+  top: 0;
+  -webkit-transform: rotate(-33deg);
+  -ms-transform: rotate(-33deg);
+  transform: rotate(-33deg);
+  top: -4px;
+  left: -1px;
 }
 .controls .dots {
   position: absolute;
@@ -7346,6 +7411,14 @@ main .main-page {
 .projects {
   padding-top: 15rem;
 }
+.projects a:not(.arrow) {
+  border-bottom: 1px solid white;
+  -webkit-transition: border-bottom 0.24s;
+  transition: border-bottom 0.24s;
+}
+.projects a:not(.arrow):hover {
+  border-bottom: 1px solid transparent;
+}
 .projects p {
   line-height: 25px;
 }
@@ -7358,6 +7431,10 @@ main .main-page {
 .projects .preview {
   position: relative;
   z-index: 5;
+}
+.projects .preview .show-detail {
+  opacity: 0;
+  visibility: hidden;
 }
 .projects .project-nav {
   opacity: 0;
@@ -7374,8 +7451,16 @@ main .main-page {
   float: left;
   margin-right: 20px;
 }
+.projects .project-nav li .back-arrow {
+  position: relative;
+  top: -1px;
+}
+.projects .project-nav li .back-arrow:hover {
+  cursor: pointer;
+}
 .projects .project-nav li a {
-  border-bottom: 3px solid transparent;
+  font-weight: normal;
+  border-bottom: 2px solid transparent;
   -webkit-transition: all .24s;
   transition: all .24s;
 }
@@ -7385,7 +7470,7 @@ main .main-page {
 .projects .project-nav li.active a {
   padding-bottom: 10px;
   color: #878889;
-  border-bottom: 3px solid white;
+  border-bottom: 2px solid white;
 }
 .projects .project-nav li:last-child {
   margin-right: 0;
@@ -7423,7 +7508,7 @@ main .main-page {
   margin-right: 0;
 }
 .more .ic-group .ic img {
-  width: 40px;
+  width: 60px;
   margin: auto;
   margin-bottom: 1rem;
 }
@@ -7439,8 +7524,8 @@ main .main-page {
   margin-top: 5rem;
 }
 .visible {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 footer {
   font-size: 1.2rem;
@@ -7448,6 +7533,9 @@ footer {
   height: 32px;
   position: relative;
   z-index: 5;
+}
+footer img {
+  width: 17px;
 }
 footer ul {
   float: left;
