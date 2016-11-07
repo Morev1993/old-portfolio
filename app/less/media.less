@@ -47,6 +47,22 @@
 
 }
 
+@media only screen and (max-height : 701px) {
+    .project {
+    	&.js-full {
+    		.bg {
+    			clip: rect(0, 100vw, 700px, 0);
+    		}
+    		.shadow {
+    			top: 0;
+    		    left: 0;
+    		    width: 100vw;
+    			height: 700px;
+    		}
+    	}
+    }
+}
+
 
 /*==========  Mobile First Method  ==========*/
 

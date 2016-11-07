@@ -7149,9 +7149,19 @@ header .navigation ul li {
   margin-right: 30px;
 }
 header .navigation ul li a {
-  border-bottom: 3px solid transparent;
   -webkit-transition: all .24s;
   transition: all .24s;
+}
+header .navigation ul li a:after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: white;
+  display: block;
+  position: relative;
+  top: 11px;
+  -webkit-transition: width 1.1s;
+  transition: width 1.1s;
 }
 header .navigation ul li a:hover {
   color: #878889;
@@ -7159,7 +7169,9 @@ header .navigation ul li a:hover {
 header .navigation ul li.active a {
   padding-bottom: 10px;
   color: #878889;
-  border-bottom: 3px solid white;
+}
+header .navigation ul li.active.js-stroke a:after {
+  width: 100%;
 }
 header .navigation ul li:last-child {
   margin-right: 0;
@@ -7243,6 +7255,9 @@ main .main-page {
 .controls .dots a:hover {
   opacity: 1;
 }
+.controls .dots a.active {
+  opacity: 1;
+}
 .project .bg {
   position: absolute;
   top: 0;
@@ -7311,9 +7326,15 @@ main .main-page {
   z-index: 5;
 }
 .projects .preview .project-nav {
+  opacity: 0;
+  visibility: hidden;
   font-size: 1.2rem;
   line-height: 1.71428571rem;
   margin-bottom: 9rem;
+}
+.projects .preview .project-nav.visible {
+  opacity: 1;
+  visibility: visible;
 }
 .projects .preview .project-nav:after {
   content: '';
@@ -7340,20 +7361,20 @@ main .main-page {
 .projects .preview .project-nav li:last-child {
   margin-right: 0;
 }
-.info {
-  position: relative;
-  z-index: 100;
-  color: #fff;
-}
-.tab-item {
+.tab-content {
   -webkit-transition: opacity .24s;
   transition: opacity .24s;
   opacity: 1;
   visibility: visible;
 }
-.tab-item.hidy {
+.tab-content.hidy {
   opacity: 0;
   visibility: hidden;
+}
+.info {
+  position: relative;
+  z-index: 100;
+  color: #fff;
 }
 footer {
   font-size: 1.2rem;
@@ -7393,6 +7414,17 @@ footer ul li:last-child {
 }
 /* Extra Small Devices, Phones */
 /* Custom, iPhone Retina */
+@media only screen and (max-height: 701px) {
+  .project.js-full .bg {
+    clip: rect(0, 100vw, 700px, 0);
+  }
+  .project.js-full .shadow {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 700px;
+  }
+}
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */
