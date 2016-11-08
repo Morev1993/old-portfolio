@@ -7285,7 +7285,7 @@ main .main-page {
   right: 10%;
 }
 .controls .arrow-right .line {
-  right: 0;
+  left: 0;
 }
 .controls .arrow-right .line:after {
   top: 0;
@@ -7307,7 +7307,7 @@ main .main-page {
   left: 10%;
 }
 .controls .arrow-left .line {
-  left: 0;
+  right: 0;
 }
 .controls .arrow-left .line:after {
   top: 0;
@@ -7520,9 +7520,6 @@ main .main-page {
   opacity: 1;
   visibility: visible;
 }
-.js-detail .tab-content {
-  margin-top: 5rem;
-}
 .visible {
   opacity: 1 !important;
   visibility: visible !important;
@@ -7535,7 +7532,7 @@ footer {
   z-index: 5;
 }
 footer img {
-  width: 17px;
+  width: 14px;
 }
 footer ul {
   float: left;

@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).ready(function() {
 	var $projectBlock = $('#project-block');
 	var $project = $('.project');
 	$body = $('html, body');
@@ -19,7 +19,7 @@ $(document).ready(() => {
             if(~path.indexOf(href)) {
                 $(item).addClass('active js-stroke');
             }
-        })
+        });
     }
 
 	function updateDotsItems(path) {
