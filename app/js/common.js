@@ -86,7 +86,7 @@ $(document).ready(function() {
 		var e = e;
 		e.preventDefault();
 
-		var pathname = $(this).find('a').attr('href');
+		var pathname = $(this).attr('href');
 
 		$('.tab-content').addClass('hidy');
 		$('.bg-overlay').removeClass('light');
@@ -97,7 +97,7 @@ $(document).ready(function() {
 		}});
 	}
 
-	$body.on('click', '.controls', triggerSlide);
+	$body.on('click', '.controls a', triggerSlide);
 
 	function setTabs() {
 		$(".tab-item:first").addClass('visible');
@@ -109,7 +109,7 @@ $(document).ready(function() {
 	}
 
 	function pageIntro(ctx, next) {
-		$.get( "http://localhost:3454/wp-test/wp-json/wp/v2/posts?filter[name]=" + ctx.params.id + "", function( data ) {
+		$.get( "http://igor-morev.ru/personal/wp-json/wp/v2/posts?filter[name]=" + ctx.params.id + "", function( data ) {
 			if (data.length) {
 				$projectBlock.html(projectTmpl(data[0]));
 
