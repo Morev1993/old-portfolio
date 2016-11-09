@@ -109,10 +109,9 @@ $(document).ready(function() {
 	}
 
 	function pageIntro(ctx, next) {
-		$.get( "http://localhost/personal/wp-json/wp/v2/posts?filter[name]=" + ctx.params.id + "", function( data ) {
+		$.get( "http://localhost:3454/wp-test/wp-json/wp/v2/posts?filter[name]=" + ctx.params.id + "", function( data ) {
 			if (data.length) {
 				$projectBlock.html(projectTmpl(data[0]));
-				console.log(data[0]);
 
 				$('.bg-overlay').addClass('light');
 				setTabs();

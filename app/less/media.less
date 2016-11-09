@@ -1,14 +1,118 @@
 /*==========  Desktop First Method  ==========*/
 
+@media only screen and (min-width : 2000px) {
+    .project {
+        &.js-slide-left {
+            .bg {
+                clip: rect(225px, 1800px, 650px, 960px);
+            }
+            .shadow {
+                left: 960px;
+                width: 840px;
+            }
+        }
+        &.js-full {
+            .bg {
+                clip: rect(0, 100vw, 100vh, 0);
+            }
+            .shadow {
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    }
+}
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
+    .tab-content {
+        margin-top: 6rem;
+    }
+    .controls {
+        &.js-showed {
+            .arrow-right, .arrow-left {
+                .line {
+                    width: 0;
+                }
+            }
+        }
+        .arrow-right {
+            right: 3%;
+            .line {
+                left: auto;
+                right: 0;
+            }
+        }
 
+        .arrow-left {
+            left: 3%;
+            .line {
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+    .project {
+        &.js-slide-left {
+            .bg {
+                clip: rect(225px, 90vw, 650px, 50vw);
+            }
+            .shadow {
+                left: 50vw;
+                width: 40vw;
+            }
+        }
+        &.js-full {
+            .bg {
+                clip: rect(0, 100vw, 100vh, 0);
+            }
+            .shadow {
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+    .project {
+        .bg, .shadow {
+            display: none;
+        }
+    }
 
+    main {
+        .main-page {
+            height: 100%;
+        }
+    }
+    .projects {
+        padding-top: 6rem;
+    }
+    .more {
+        .ic-group {
+            margin-left: 0;
+            .ic {
+                img {
+                    width: 40px;
+                }
+                .f-S;
+            }
+        }
+    }
+    main {
+        background: black;
+        .main-page {
+            margin-bottom: 10rem;
+        }
+    }
 }
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
@@ -34,6 +138,15 @@
         -ms-animation: none !important;
         animation: none !important;
     }
+
+    .controls {
+        &.js-showed {
+            .arrow-right, .arrow-left {
+                display: none;
+            }
+        }
+    }
+
 
 }
 

@@ -5,7 +5,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import "../bower_components/animate.css/animate.min.css";
 @import "../fonts/opensans/opensans.css";
 html {
   font-family: sans-serif;
@@ -7154,6 +7153,7 @@ a:focus {
 }
 .container {
   z-index: 1;
+  max-width: 1600px;
 }
 header {
   padding-top: 20px;
@@ -7565,8 +7565,93 @@ footer ul li:last-child {
   margin-right: 0;
 }
 /*==========  Desktop First Method  ==========*/
+@media only screen and (min-width: 2000px) {
+  .project.js-slide-left .bg {
+    clip: rect(225px, 1800px, 650px, 960px);
+  }
+  .project.js-slide-left .shadow {
+    left: 960px;
+    width: 840px;
+  }
+  .project.js-full .bg {
+    clip: rect(0, 100vw, 100vh, 0);
+  }
+  .project.js-full .shadow {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
 /* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .tab-content {
+    margin-top: 6rem;
+  }
+  .controls.js-showed .arrow-right .line,
+  .controls.js-showed .arrow-left .line {
+    width: 0;
+  }
+  .controls .arrow-right {
+    right: 3%;
+  }
+  .controls .arrow-right .line {
+    left: auto;
+    right: 0;
+  }
+  .controls .arrow-left {
+    left: 3%;
+  }
+  .controls .arrow-left .line {
+    right: auto;
+    left: 0;
+  }
+  .project.js-slide-left .bg {
+    clip: rect(225px, 90vw, 650px, 50vw);
+  }
+  .project.js-slide-left .shadow {
+    left: 50vw;
+    width: 40vw;
+  }
+  .project.js-full .bg {
+    clip: rect(0, 100vw, 100vh, 0);
+  }
+  .project.js-full .shadow {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
 /* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .project .bg,
+  .project .shadow {
+    display: none;
+  }
+  main .main-page {
+    height: 100%;
+  }
+  .projects {
+    padding-top: 6rem;
+  }
+  .more .ic-group {
+    margin-left: 0;
+  }
+  .more .ic-group .ic {
+    font-size: 1.2rem;
+    line-height: 1.71428571rem;
+  }
+  .more .ic-group .ic img {
+    width: 40px;
+  }
+  main {
+    background: black;
+  }
+  main .main-page {
+    margin-bottom: 10rem;
+  }
+}
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   /*Disable Animation on Mobile Devices*/
@@ -7581,6 +7666,10 @@ footer ul li:last-child {
     /*CSS animations*/
     -webkit-animation: none !important;
     animation: none !important;
+  }
+  .controls.js-showed .arrow-right,
+  .controls.js-showed .arrow-left {
+    display: none;
   }
 }
 /* Extra Small Devices, Phones */
