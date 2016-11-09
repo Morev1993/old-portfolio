@@ -7435,6 +7435,9 @@ main .main-page {
 .projects .preview .show-detail {
   opacity: 0;
   visibility: hidden;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 .projects .project-nav {
   opacity: 0;
@@ -7476,13 +7479,20 @@ main .main-page {
   margin-right: 0;
 }
 .tab-content {
-  -webkit-transition: opacity .24s;
-  transition: opacity .24s;
   opacity: 1;
   visibility: visible;
   margin-top: 9rem;
-  -webkit-transition: margin-top 0.5s;
-  transition: margin-top 0.5s;
+  -webkit-transition: opacity .24s;
+  transition: opacity .24s;
+}
+.tab-content .tab-item {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  -webkit-transition: opacity .24s;
+  transition: opacity .24s;
 }
 .tab-content.hidy {
   opacity: 0;
@@ -7496,6 +7506,8 @@ main .main-page {
 .more {
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: opacity .24s;
+  transition: opacity .24s;
 }
 .more .ic-group {
   margin-left: 10%;
@@ -7523,6 +7535,14 @@ main .main-page {
 .visible {
   opacity: 1 !important;
   visibility: visible !important;
+  position: static !important;
+}
+.hidyng {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  top: -9999px;
+  left: -9999px;
 }
 footer {
   font-size: 1.2rem;

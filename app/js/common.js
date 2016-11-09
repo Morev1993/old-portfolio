@@ -100,11 +100,11 @@ $(document).ready(function() {
 	$body.on('click', '.controls', triggerSlide);
 
 	function setTabs() {
-		$(".tab-item").not(":first").hide();
+		$(".tab-item:first").addClass('visible');
 		$(".tab").click(function(e) {
 			e.preventDefault();
 			$(".tab").removeClass("active").eq($(this).index() - 1).addClass("active");
-			$(".tab-item").hide().eq($(this).index() -1).show()
+			$(".tab-item").removeClass('visible').eq($(this).index() -1).addClass('visible')
 		}).eq(0).addClass("active");
 	}
 
