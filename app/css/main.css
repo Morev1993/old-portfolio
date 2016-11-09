@@ -7633,7 +7633,7 @@ footer ul li:last-child {
     height: 100%;
   }
   .projects {
-    padding-top: 6rem;
+    padding-top: 2rem;
   }
   .more .ic-group {
     margin-left: 0;
@@ -7645,11 +7645,8 @@ footer ul li:last-child {
   .more .ic-group .ic img {
     width: 40px;
   }
-  main {
-    background: black;
-  }
   main .main-page {
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
   }
 }
 /* Small Devices, Tablets */
@@ -7670,6 +7667,15 @@ footer ul li:last-child {
   .controls.js-showed .arrow-right,
   .controls.js-showed .arrow-left {
     display: none;
+  }
+  .logo .job {
+    font-size: 1rem;
+    line-height: 1.42857143rem;
+  }
+  h1 {
+    font-size: 3rem;
+    line-height: 4.28571429rem;
+    margin-bottom: 20px;
   }
 }
 /* Extra Small Devices, Phones */
