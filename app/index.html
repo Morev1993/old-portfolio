@@ -1,112 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Igor Morev | Frontend developer</title>
-  <meta charset="utf-8">
-  <meta name="author" content="Igor Morev">
-  <meta name="description" content="Personal site of Igor Morev, frontend developer. Creating sites and web apps.">
-  <meta name="keywords" content="frontend developer, russia, web, site">
-  <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">
+  <head>
+    <title>Igor Morev | Frontend developer</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Igor Morev" />
+    <meta
+      name="description"
+      content="Personal site of Igor Morev, frontend developer. Creating sites and web apps."
+    />
+    <meta name="keywords" content="frontend developer, russia, web, site" />
+    <link
+      rel="shortcut icon"
+      href="/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/img/favicon/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/img/favicon/apple-touch-icon-114x114.png"
+    />
 
-  <meta name="theme-color" content="#9CC2CE">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#9CC2CE" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-  <link href="/css/main.css" rel="stylesheet">
-  <script src="/vendor/modernizr-custom.js"></script>
-</head>
-<body>
-  <main>
-    <div class="bg-overlay"></div>
-    <header class="top-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-5 logo">
-            <p class="name">Igor Morev</p>
-            <p class="job">Frontend developer</p>
-          </div>
-          <div class="col-xs-7 navigation">
-            <ul class="list-unstyled pull-right">
-              <li class="active"><a href="/projects">projects</a></li>
-              <li><a href="/info">info</a></li>
-            </ul>
+    <link href="/css/main.css" rel="stylesheet" />
+    <script src="/vendor/modernizr-custom.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="bg-overlay"></div>
+      <header class="top-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-5 logo">
+              <p class="name">Igor Morev</p>
+              <p class="job">Frontend developer</p>
+            </div>
+            <div class="col-xs-7 navigation">
+              <ul class="list-unstyled pull-right">
+                <li class="active"><a href="/projects">projects</a></li>
+                <li><a href="/info">info</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-    <div class="main-page">
-      <div class="projects">
+      </header>
+      <div class="main-page">
+        <div class="projects">
           <div id="project-block" class="project"></div>
-      </div>
-    </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-6">
-            <ul class="list-unstyled">
-        <li><a target="_blank" href="https://vk.com/i_morev"><img style="margin-top: 4px;" src="/img/vk-ic.svg" alt="alt"></a></li>
-                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100012756196517"><img src="/img/fb-ic.svg" alt="alt"></a></li>
-            </ul>
-          </div>
-          <div class="col-xs-6 t-R">
-            <p>&copy; 2016</p>
-          </div>
         </div>
-
-        <script id="project" type="text/x-handlebars-template">
-          <div class="bg" style="background: url({{fi_full}}) no-repeat 50% 50%"></div>
-          <div class="shadow"></div>
-          <div class="container">
-            <div class="controls">
-              {{#if prev_post}}
-                <a class="arrow-left arrow" href="/projects/{{prev_post}}/">
-                    <span class="line"></span>
-                </a>
-              {{/if}}
-              {{#if next_post}}
-                <a class="arrow-right arrow" href="/projects/{{next_post}}/">
-                    <span class="line"></span>
-                </a>
-              {{/if}}
-
-              <div class="dots">
-                {{#each posts}}
-                  <a href="/projects/{{post_name}}/"></a>
-                {{/each}}
-              </div>
-            </div>
-            {{{content.rendered}}}
-          </div>
-        </script>
-
-        <script id="info" type="text/x-handlebars-template">
-          <div class="container">
-            <div class="info row">
-              <div class="col-sm-offset-2 col-sm-7">
-                <h1>About me</h1>
-                <p>Hi, my name is <b>Igor Morev</b> and i am frontend developer. I've been doing web development for over two years and using the latest technologies. I worked in web-studios and other relevant offices. I create frontend for websites, SPA-applications using html5,
-                    jQuery, angular.js, react, node.js, php, gulp, jira, redmine, git,
-                    webpack and other ...</p>
-                    <br/>
-                <p>Currently available for freelance projects.<br/> Send your offer on my mail <a href="mailto:morev.i@mail.ru">morev.i@mail.ru</a></p>
-              </div>
-            </div>
-          </div>
-        </script>
-
       </div>
-    </footer>
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/page/page.js"></script>
-    <script src="/bower_components/handlebars/handlebars.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/jquery.gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <ul class="list-unstyled">
+                <li>
+                  <a target="_blank" href="https://vk.com/i_morev"
+                    ><img
+                      style="margin-top: 4px"
+                      src="/img/vk-ic.svg"
+                      alt="alt"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/profile.php?id=100012756196517"
+                    ><img src="/img/fb-ic.svg" alt="alt"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-xs-6 t-R">
+              <p>&copy; 2016</p>
+            </div>
+          </div>
 
-    <script src="/js/common.js"></script>
-  </main>
-</body>
+          <script id="project" type="text/x-handlebars-template">
+            <div
+              class="bg"
+              style="background: url('https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D') no-repeat 50% 50%"
+            ></div>
+            <div class="shadow"></div>
+            <div class="container">
+              <div class="controls">
+
+                <a class="arrow-left arrow" href="#">
+                  <span class="line"></span>
+                </a>
+
+                <a class="arrow-right arrow" href="#">
+                  <span class="line"></span>
+                </a>
+
+                <div class="dots">
+                  <a href="#"></a>
+                </div>
+              </div>
+            </div>
+          </script>
+
+          <script id="info" type="text/x-handlebars-template">
+            <div class="container">
+              <div class="info row">
+                <div class="col-sm-offset-2 col-sm-7">
+                  <h1>About me</h1>
+                  <p>Hi, my name is
+                    <b>Igor Morev</b>
+                    and i am frontend developer. I've been doing web development
+                    for over two years and using the latest technologies. I
+                    worked in web-studios and other relevant offices. I create
+                    frontend for websites, SPA-applications using html5, jQuery,
+                    angular.js, react, node.js, php, gulp, jira, redmine, git,
+                    webpack and other ...</p>
+                  <br />
+                  <p>Currently available for freelance projects.<br />
+                    Send your offer on my mail
+                    <a href="mailto:morev.i@mail.ru">morev.i@mail.ru</a></p>
+                </div>
+              </div>
+            </div>
+          </script>
+        </div>
+      </footer>
+      <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="/bower_components/page/page.js"></script>
+      <script src="/bower_components/handlebars/handlebars.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/jquery.gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
+
+      <script src="/js/common.js"></script>
+    </main>
+  </body>
 </html>
